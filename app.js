@@ -3,7 +3,14 @@ const express = require("express");
 const app = express();
 const connectDB = require("./db/connect")
 const PORT = process.env.PORT || 5000;
-const products_routes = require("./routes/products")
+const products_routes = require("./routes/products");
+//send data from backend to frontend
+//install cors
+//require cors
+const cors=require("cors");
+//use the cors in app
+app.use(cors());
+
 
 app.get("/",(req,res)=>{
 res.send("Hii I am live");

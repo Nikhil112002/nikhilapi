@@ -1,5 +1,6 @@
-const product = require("../models/product");
 const Product = require("../models/product")
+const Blog = require("../models/blog")
+
 const getAllProducts = async(req,res) => {
     const {category,authorName,title} = req.query;
     const queryObject = {};
@@ -18,13 +19,16 @@ const getAllProducts = async(req,res) => {
 
     const myData = await Product.find(queryObject);
     res.status(200).json({myData})
+
 };
 
 const getAllProductsTesting = async(req,res) => {
-    const myData = await Product.find(req.query); 
-    
-    
-    res.status(200).json({myData})
+    const myBlog = await Product.find(req.query); 
+    res.status(200).json({myBlog})
+};
+const getAllBlogs = async(req,res) => {
+    const myBlog = await Blog.find(req.query); 
+    res.status(200).json({myBlog})
 };
 
-module.exports = {getAllProducts,getAllProductsTesting} 
+module.exports = {getAllProducts,getAllProductsTesting,getAllBlogs}

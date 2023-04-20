@@ -1,5 +1,5 @@
-  const mongoose = require("mongoose")
-  const productSchema = new mongoose.Schema({
+const mongoose = require("mongoose")
+const productSchema1 = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -23,16 +23,9 @@
     createdAt: {
         type: String,
     },
-    about: {
+    cover:{
         type: String,
-        required: false,
-    },
-    content: {
-        type: String,
-        required: true, 
     },
   });
 
-module.exports = mongoose.model("Product", productSchema);
-
-   
+module.exports = mongoose.model("Blog", productSchema1);
