@@ -10,7 +10,7 @@ const products_routes = require("./routes/products");
 const cors=require("cors");
 //use the cors in app
 app.use(cors());
-
+app.use(express.json())
 
 app.get("/",(req,res)=>{
 res.send("Hii I am live");
